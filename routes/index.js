@@ -17,4 +17,16 @@ router.get('/band/alerts', function(req, res, next){
     });
 });
 
+/* GET Init first alert*/
+router.get('/band/init', function(req, res, next){
+  var alert = new model.Alert({
+    priority: 1,
+    title: 'New Alert',
+    description: 'This is a longer description.  Just in case you need more information',
+    created: new Date()
+  });
+  alert.save();
+  res.end('alert created');
+});
+
 module.exports = router;
