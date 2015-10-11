@@ -6,7 +6,8 @@ rss(version="2.0")
 		description Just an RSS feed for my alerts
 		each alert in alerts
 			item
-				title= alert.title + ' | ' + alert.priority 
+				title= alert.title
+				priority= alert.priority 
 				link http://joshalerts.azurewebsites.net
 				description= alert.description
 				pubDate= alert.created
