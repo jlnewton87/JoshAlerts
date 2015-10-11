@@ -13,8 +13,7 @@ router.get('/band/alerts', function(req, res, next){
     .limit(10)
     .sort('-created')
     .exec(function(err, alerts){
-      var alertsToSend = {Alerts: alerts};
-      res.end(JSON.stringify(alertsToSend));
+      res.render('rss', {alerts: alerts});
     });
 });
 
