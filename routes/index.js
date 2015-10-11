@@ -12,8 +12,7 @@ router.get('/band/alerts', function(req, res, next){
   model.Alert.find()
     .limit(10)
     .exec(function(err, alerts){
-      var alertsToSend = {Alerts: alerts};
-      res.end(JSON.stringify(alertsToSend));
+      res.render('rss', {alerts: alerts});
     });
 });
 
